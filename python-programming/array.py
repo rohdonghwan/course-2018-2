@@ -1,25 +1,28 @@
 import numpy as np
 
-print("<배열에서의 불 표현>")
-dirty = np.array([9,4,1,-0.01,-0.02,-0.001])
-whos_dirty = dirty<0
-print(whos_dirty)
-dirty[whos_dirty] = 0
-print(dirty)
-print(" ")
+stock = np.array([140.49, 0.97,40.68,41.53,55.7,57.21,98.2,99.19,109.96,111.47,35.71,36.27,87.85,89.11,30.22,30.91])
+print(stock)
+stocks = stock.reshape(8,2).T
+print(stocks)
 
-print("<논리 연산자로 불 표현 결합>")
-linear = np.arange(-1, 1.1, 0.2)
-print((linear <= 0.5)&(linear >= -0.5))
-print(linear)
-print(" ")
+sap = np.array(["MMM", "ABT", "ABBV","ACN","ACE","ATVI","ADBE","ADT"])
+print(sap)
 
-print("<배열에서의 벡터 연산>")
-a = np.arange(4)
-b = np.arange(1,5)
-print(a)
-print(b)
-print(a+b)
-print(a*b)
-print(" ")
+fall = np.greater(stocks[0], stocks[1])
+print(fall)
+sap[fall]
 
+stocks[1,0] = np
+np.isnan(stocks)
+
+stocks[np.isnan(stocks)] = 0
+print(stocks)
+
+RATE = .375
+TERM = 30
+simple = (  RATE*np.ones(TERM)).cumsum()
+compound = ((1+RATE)*np.ones(TERM)).cumprod()
+print(simple)
+print(compound)
+diffSimple = np.abs(simple[0] - simple[-1])
+print(diffSimple)
