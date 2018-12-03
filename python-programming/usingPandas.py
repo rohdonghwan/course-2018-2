@@ -12,7 +12,7 @@ inflation.name = "%"
 print(inflation.head())
 print(inflation.tail())
 alco2009 = pd.read_csv("niaaa-report2009.csv", index_col = "State")
-print(alco)
+print(alco2009)
 alco2009["Wine"].head()
 alco2009["Total"] = 0
 print(alco2009.head())
@@ -24,7 +24,7 @@ alco2009.reset_index().set_index("Beer").head()
 "Samoa" in alco2009.index
 s_states = [state for state in alco2009.index if state[0] == 's']+["Samoa"]
 print(s_states)
-drinks = list(alco2009.colums)+["Water"]
+drinks = list(alco2009.columns)+["Water"]
 print(drinks)
 nan_alco = alco2009.reindex(s_states, columns = drinks)
 print(nan_alco) 
